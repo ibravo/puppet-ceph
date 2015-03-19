@@ -18,7 +18,7 @@
 # Author: Loic Dachary <loic@dachary.org>
 # Author: Francois Charlier <francois.charlier@enovance.com>
 # Author: David Moreau Simard <dmsimard@iweb.com>
-# Author: Andrew Woodward <awoodward@mirantis.com>
+# Author: Andrew Woodward bra <awoodward@mirantis.com>
 # Author: David Gurtner <aldavud@crimson.ch>
 # Author: Ricardo Rocha <ricardo@catalyst.net.nz>
 #
