@@ -26,6 +26,16 @@ class ceph::ltgmonitor ($mon_int) {
 #    } 
 #  }
 
+  if (!defined(Yumrepo['ext-ceph'])) {
+    class { 'ceph::ltg_repo':
+      release => $ceph::profile::params::release,
+    } 
+  }
+
+#     apt::source { 'ceph':
+#     yumrepo { 'ext-ceph':
+
+
   if (!defined(Package['ceph'])) {
     class { 'ceph':
       fsid                      => $ceph::profile::params::fsid,
@@ -41,7 +51,7 @@ class ceph::ltgmonitor ($mon_int) {
     }
   }
   Class['Ceph::Profile::Params'] ->
-  Class['Ceph::Repo'] ->
+  Class['Ceph::Ltg_repo'] ->
   Class['Ceph']
 
   Ceph_Config<| |> ->
