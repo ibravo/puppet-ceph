@@ -27,7 +27,7 @@ class ceph::ltgmonitor ($mon_int) {
 #  }
 
   if (!defined(Yumrepo['ext-ceph'])) {
-    class { 'ceph::ltg_repo':
+    class { 'ceph::repo':
       release => $ceph::profile::params::release,
     } 
   }
@@ -51,7 +51,7 @@ class ceph::ltgmonitor ($mon_int) {
     }
   }
   Class['Ceph::Profile::Params'] ->
-  Class['Ceph::Ltg_repo'] ->
+  Class['Ceph::Repo'] ->
   Class['Ceph']
 
   Ceph_Config<| |> ->
